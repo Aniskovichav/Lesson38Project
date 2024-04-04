@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Student extends Object implements Comparable<Student>{
     private String name;
     private int age;
-    private int mark;
+    private double mark;
 
     public Student() {
     }
@@ -32,7 +32,7 @@ public class Student extends Object implements Comparable<Student>{
         this.age = age;
     }
 
-    public int getMark() {
+    public double getMark() {
         return mark;
     }
 
@@ -45,8 +45,8 @@ public class Student extends Object implements Comparable<Student>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return age == student.age && mark == student.mark
-                && Objects.equals(name, student.name);
+        return age == student.age && Double.compare(student.mark, mark) == 0
+                k&& Objects.equals(name, student.name);
     }
 
     @Override
@@ -74,16 +74,28 @@ public class Student extends Object implements Comparable<Student>{
                 '}';
     }
 
+//    @Override
+//    public int compareTo(Student o) {
+////        if (o.mark > mark) {
+////            return 1;
+////        } else if (o.mark < mark) {
+////            return -1;
+////        }
+////
+////        return Double.compare(o.mark, mark);
+////        return o.mark - mark;
+//        return o.name.compareTo(name);
+//    }
+
     @Override
     public int compareTo(Student o) {
-//        if (o.mark > mark) {
-//            return 1;
-//        } else if (o.mark < mark) {
-//            return -1;
-//        }
-//
-//        return Double.compare(o.mark, mark);
-//        return o.mark - mark;
-        return o.name.compareTo(name);
+        int result = o.name.compareTo(name);
+        if (result == 0) {
+            result = age - o.age;
+            if (result == 0) {
+                result = Double.compare(mark,o.mark);
+            }
+        }
+        return 0;
     }
 }
