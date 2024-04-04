@@ -46,7 +46,7 @@ public class Student extends Object implements Comparable<Student>{
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
         return age == student.age && Double.compare(student.mark, mark) == 0
-                k&& Objects.equals(name, student.name);
+                && Objects.equals(name, student.name);
     }
 
     @Override
