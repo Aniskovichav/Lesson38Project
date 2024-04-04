@@ -1,6 +1,6 @@
 package by.itstep.aniskovich.java.lesson38.model;
 
-public class Student {
+public class Student extends Object {
     private String name;
     private int age;
     private int mark;
@@ -36,6 +36,16 @@ public class Student {
 
     public void setMark(int mark) {
         this.mark = mark;
+    }
+
+    public int hashCode(){
+//        System.out.println("hashCode from " + name);
+        return 10;
+    }
+
+    public boolean equals(Object obj) {
+
+        return (this == obj);
     }
 
     @Override
