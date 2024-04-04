@@ -2,24 +2,24 @@ package by.itstep.aniskovich.java.lesson38.controller;
 
 import by.itstep.aniskovich.java.lesson38.model.Student;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Set<Student> set = new HashSet<>();
+
+//        Set<Student> set = new HashSet<>();
+//        Set<Student> set = new LinkedHashSet<>();
+        Set<Student> set = new TreeSet<>();
         set.add(new Student("Alex", 20, 8));
         set.add(new Student("Nick", 22, 7));
         set.add(new Student("Alice", 21, 9));
         set.add(new Student("Neo", 23, 10));
         set.add(new Student("Mike", 24, 6));
-//        set.add(new Student("Alex", 20, 8));
-//        set.add(new Student("Nick", 22, 7));
-//        set.add(new Student("Alice", 21, 9));
-//        set.add(new Student("Neo", 23, 10));
-//        set.add(new Student("Mike", 24, 6));
+        set.add(new Student("Alex", 20, 8));
+        set.add(new Student("Nick", 22, 7));
+        set.add(new Student("Alice", 21, 9));
+        set.add(new Student("Neo", 23, 10));
+        set.add(new Student("Mike", 24, 6));
 
         System.out.println("________________");
         for (Student student : set) {
@@ -28,7 +28,9 @@ public class Main {
         }
         
         
+//        Set<Integer> set = new HashSet<>();
 //        Set<Integer> set = new LinkedHashSet<>();
+//        Set<Integer> set = new TreeSet<>();
 //        set.add(5);
 //        set.add(67);
 //        set.add(12);

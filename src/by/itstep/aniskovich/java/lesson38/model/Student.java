@@ -1,6 +1,8 @@
 package by.itstep.aniskovich.java.lesson38.model;
 
-public class Student extends Object {
+import java.util.Objects;
+
+public class Student extends Object implements Comparable<Student>{
     private String name;
     private int age;
     private int mark;
@@ -38,15 +40,30 @@ public class Student extends Object {
         this.mark = mark;
     }
 
-    public int hashCode(){
-//        System.out.println("hashCode from " + name);
-        return 10;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && mark == student.mark
+                && Objects.equals(name, student.name);
     }
 
-    public boolean equals(Object obj) {
-
-        return (this == obj);
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, mark);
     }
+
+
+    //    public int hashCode(){
+////        System.out.println("hashCode from " + name);
+//        return 10;
+//    }
+//
+//    public boolean equals(Object obj) {
+//
+//        return (this == obj);
+//    }
 
     @Override
     public String toString() {
@@ -55,5 +72,16 @@ public class Student extends Object {
                 ", age=" + age +
                 ", mark=" + mark +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        if (o.mark > mark) {
+            return 1;
+        } else if (o.mark < mark) {
+            return -1;
+        }
+
+        return 0;
     }
 }
