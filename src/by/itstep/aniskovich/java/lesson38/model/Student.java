@@ -76,12 +76,12 @@ public class Student extends Object implements Comparable<Student>{
 
     @Override
     public int compareTo(Student o) {
-        if (o.mark > mark) {
-            return 1;
-        } else if (o.mark < mark) {
-            return -1;
-        }
-
-        return 0;
+//        if (o.mark > mark) {
+//            return 1;
+//        } else if (o.mark < mark) {
+//            return -1;
+//        }
+//
+        return o.mark - mark;
     }
 }
