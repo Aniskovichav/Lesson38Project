@@ -82,6 +82,8 @@ public class Student extends Object implements Comparable<Student>{
 //            return -1;
 //        }
 //
-        return o.mark - mark;
+//        return Double.compare(o.mark, mark);
+//        return o.mark - mark;
+        return name.compareTo(o.name);
     }
 }
